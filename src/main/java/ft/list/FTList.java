@@ -192,7 +192,7 @@ public abstract class FTList<E> extends JPanel implements FTSelectionObservable 
     /**
      * Sets a legend for this list component.
      * A legend is a list of <code>FTLegendItem</code> that can be rendered at the bottom
-     * of the table to help users understand the meaning of the colors of rows.
+     * of the list to help users understand the meaning of the colors of rows.
      * <p>Legend items are shown in the order they are provided by the list.
      * 
      * @param legend a list of <code>FTLegendItem</code> that represents the legend.
