@@ -8,7 +8,7 @@ It offers two kind of list.
 - <b>FTTableList:</b> a list of objects backed by a JTable so you can display multiple fields with a header.
 
 Facility buttons can be placed in one of the four positions defined in SwingConstants (see below) and each
-button can be hidden/displayed separately. SwingConstants position for the buttons:
+button can be hidden/displayed/enabled/disabled separately. SwingConstants position for the buttons:
 - <b>SwingConstants.NORTH:</b> buttons are placed in the NORTH part of the component.
 - <b>SwingConstants.EAST:</b> buttons are placed in the EAST part of the component.
 - <b>SwingConstants.SOUTH:</b> buttons are placed in the SOUTH part of the component.
