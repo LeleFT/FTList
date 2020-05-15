@@ -7,7 +7,7 @@ import ft.list.models.*;
 
 /**
  *
- * @author LeleFT
+ * @author Manuel Agostinetto
  */
 public class FTModelFactory {
     
