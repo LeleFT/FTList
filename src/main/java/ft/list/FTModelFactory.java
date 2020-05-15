@@ -1,6 +1,5 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * A Factory for FTListModels
  */
 package ft.list;
 
@@ -8,7 +7,7 @@ import ft.list.models.*;
 
 /**
  *
- * @author Manuel.Agostinetto
+ * @author LeleFT
  */
 public class FTModelFactory {
     
