@@ -57,7 +57,7 @@ public class FTTableList<E> extends FTList<E> {
 
             if (rowColorCustomizer != null) {
                 if ( !isCellSelected(row, column) ) {
-                    E rowObj = model.getRow( row );
+                    E rowObj = model.getRow( convertRowIndexToModel(row) );
                     Color color = rowColorCustomizer.getRowColor( rowObj );
                     if (color != null) {
                         rendererComponent.setBackground( color );
