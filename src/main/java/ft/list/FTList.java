@@ -12,15 +12,15 @@ import javax.swing.event.ListSelectionListener;
 /**
  * A component that displays a list of objects and four buttons with the semantic
  * of allowing the user to add other objects, remove objects from the list, select
- * one or more items and moving them up and down in the list.<br />
+ * one or more items and moving them up and down in the list.<br>
  * By default, the buttons are placed to the EAST side of the component.
  * <p>The library provides two concrete implementation of this abstract class,
  * {@link FTSimpleList} and {@link FTTableList}, that differs each other from the
  * main component that displays objects.
- * <p><b>FTSimpleList</b><br />
+ * <p><b>FTSimpleList</b><br>
  * Displays objects using a JList component. Objects are mantained in a
  * <code>FTSimpleListModel</code> instance passed to its constructor.
- * <p><b>FTTableList</b><br />
+ * <p><b>FTTableList</b><br>
  * Displays objects using a JTable component. Objects are mantained in a
  * <code>FTTableListModel</code> instance passed to its constructor.
  * <p><strong>Warning:</strong> subclasses must call <code>initComponents</code>
@@ -32,6 +32,7 @@ import javax.swing.event.ListSelectionListener;
  * <code>addFTActionListener</code> method.
  * 
  * @author Manuel Agostinetto
+ * @param <E> the type of elements in this list
  */
 public abstract class FTList<E> extends JPanel implements FTSelectionObservable {
     
@@ -91,7 +92,7 @@ public abstract class FTList<E> extends JPanel implements FTSelectionObservable 
     
     /**
      * Creates a new <code>FTList</code> placing the buttons in the <code>buttonPosition</code>
-     * side of the component.<br />
+     * side of the component.<br>
      * The value of <code>buttonPosition</code> must be one of
      * <ul>
      *    <li><code>SwingConstants.EAST:</code> (default) The buttons are placed
@@ -447,8 +448,6 @@ public abstract class FTList<E> extends JPanel implements FTSelectionObservable 
      * 
      * @param index the index of the element in the list to return
      * @return the element at the specified position in the list
-     * @throws <code>ArrayIndexOutOfBoundsException</code> if the index is out of
-     *         range (<code>index < 0 || index >= getNumElements()</code>)
      */
     public abstract E getElementAt(int index);
     
@@ -473,14 +472,14 @@ public abstract class FTList<E> extends JPanel implements FTSelectionObservable 
     /**
      * Removes the specified element from the list, if it is present.
      * If the list does not contain the element, it is unchanged. More formally,
-     * removes the element with the lowest index <code>i</code> such that<br />
+     * removes the element with the lowest index <code>i</code> such that<br>
      * <code>(o==null ? getElementAt(i)==null : o.equals(getElementAt(i)))</code>
-     * (if such an element exists).<br />
+     * (if such an element exists).<br>
      * Returns true if this list contained the specified
      * element (or equivalently, if this list changed as a result of the call).
      * 
      * @param element element to be removed from this list, if it is present
-     * @return <chde>true</code> if this list contained the specified element
+     * @return <code>true</code> if this list contained the specified element
      */
     public abstract boolean removeElement(E element);
     
