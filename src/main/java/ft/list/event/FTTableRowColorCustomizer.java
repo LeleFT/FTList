@@ -6,10 +6,11 @@ import java.awt.Color;
  * The RowColorCustomizer interface used to provide color customization for rows.
  * <p>The class that implements this interface can provide a specific <code>Color</code>
  * object for the background of the row based on the value of the row that is being
- * processed by the <code>FTTableList</code> component.<br />
+ * processed by the <code>FTTableList</code> component.<br>
  * The row object bean is passed to the <code>getRowColor</code> method.
  * 
  * @author Manuel.Agostinetto
+ * @param <E> the type of elements it manages
  */
 public interface FTTableRowColorCustomizer<E> {
     /**
