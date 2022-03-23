@@ -16,12 +16,13 @@ import javax.swing.table.TableModel;
  * An <code>FTList</code> implementation that uses a <code>JTable</code> to represent
  * the objects contained in the list. To construct an <code>FTTableList</code> object
  * it's necessary to pass it an <code>FTTableListModel</code> instance in the
- * constructor.<br />
+ * constructor.<br>
  * To render the values in the table, it uses the default renderer provided by the
  * <code>JTable</code> class. It's also possible to set up a new Renderer for each
  * column of the table.
  * 
  * @author Manuel Agostinetto
+ * @param <E> the type of elements managed by this list.
  */
 public class FTTableList<E> extends FTList<E> {
     
@@ -182,8 +183,6 @@ public class FTTableList<E> extends FTList<E> {
      * 
      * @param columnIndex the index of the column to which the renderer will be set
      * @param renderer the renderer instance to set up for the column
-     * @throws <code>ArrayIndexOutOfBoundsException</code> if <code>columnIndex</code>
-     *         is out of range.
      */
     public void setRenderer(int columnIndex, TableCellRenderer renderer) {
         if (columnIndex < model.getColumnCount()) {
@@ -195,7 +194,7 @@ public class FTTableList<E> extends FTList<E> {
     }
     
     /**
-     * Sets a RowColorCustomizer for this table component.<br />
+     * Sets a RowColorCustomizer for this table component.<br>
      * A RowColorCustomizer is a delegate that is used to determine the color to use for
      * highlighting the entire row of a table according to the value of that row bean.
      * 
