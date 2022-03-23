@@ -6,7 +6,8 @@ package ft.list;
 import ft.list.models.*;
 
 /**
- *
+ * A factory for standard models.
+ * 
  * @author Manuel Agostinetto
  */
 public class FTModelFactory {
