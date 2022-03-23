@@ -15,6 +15,7 @@ import javax.swing.table.*;
  * the {@link FTModelFactory} factory class.
  * 
  * @author Manuel Agostinetto
+ * @param <E> the type of elements managed by the model.
  */
 public abstract class FTTableListModel<E> extends AbstractTableModel {
     
@@ -139,7 +140,7 @@ public abstract class FTTableListModel<E> extends AbstractTableModel {
     /**
      * Add a row to the table at the specified index.
      * If index is greater than the size of the <code>FTTableList</code> component,
-     * appends the row to the end of the table.<br />
+     * appends the row to the end of the table.<br>
      * If index is less than 0 an <code>ArrayIndexOutOfBoundsException</code> will be
      * thrown.
      * 
