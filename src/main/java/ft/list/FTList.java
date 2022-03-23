@@ -439,7 +439,7 @@ public abstract class FTList<E> extends JPanel implements FTSelectionObservable 
      * 
      * @param index the position of the element to be removed
      * @return the element that was removed from the list or <code>null</code> if
-     *         the index is out of range (<code>index < 0 || index >= getNumElements()</code>)
+     *         the index is out of range (<code>index &lt; 0 || index &gt;= getNumElements()</code>)
      */
     public abstract E removeElementAt(int index);
 
