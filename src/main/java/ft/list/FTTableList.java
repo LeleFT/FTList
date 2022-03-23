@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package ft.list;
 
 import ft.list.event.FTTableRowColorCustomizer;
