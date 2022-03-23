@@ -13,6 +13,8 @@ public interface FTActionListener {
     /**
      * Invoked when a button of an {@link ft.list.FTList} object is clicked.
      * See the class description for {@link FTActionEvent} for a definition of a FTAction event.
+     * 
+     * @param evt The FTAction event fired by the button
      */
     void buttonClicked(FTActionEvent evt);
 }
