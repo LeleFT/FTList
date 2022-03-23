@@ -7,12 +7,23 @@ package ft.list.models;
 import java.util.ArrayList;
 
 /**
- *
+ * This class represents a generic model for a <code>FTTableList</code>.
+ * 
  * @author Manuel.Agostinetto
+ * @param <T> the type of elements managed by this model.
  */
 public class FTTableGenericModel<T> extends FTTableListModel<T[]> {
     private ArrayList<T[]> myData;
     
+    /**
+     * Creates an instance of <code>FTTableGenericModel</code> with a header.
+     * If the <code>set</code> param is set to <code>true</code> the model acts
+     * as a Set and doesn't accept duplicate elements.
+     * 
+     * @param headers the array of Strings used for the table header
+     * @param set if <code>true</code> the model acts as a Set and doesn't
+     * accept duplicate values
+     */
     public FTTableGenericModel(String[] headers, boolean set) {
         super(headers, set);
         myData = new ArrayList<T[]>();
