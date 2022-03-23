@@ -1,13 +1,11 @@
 package ft.list;
 
 import ft.list.event.FTTableRowColorCustomizer;
-import ft.list.models.FTLegendItem;
 import ft.list.models.FTTableListModel;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -57,7 +55,7 @@ public class FTTableList<E> extends FTList<E> {
 
             if (rowColorCustomizer != null) {
                 if ( !isCellSelected(row, column) ) {
-                    E rowObj = model.getRow( row );
+                    E rowObj = model.getRow( convertRowIndexToModel(row) );
                     Color color = rowColorCustomizer.getRowColor( rowObj );
                     if (color != null) {
                         rendererComponent.setBackground( color );
@@ -223,6 +221,57 @@ public class FTTableList<E> extends FTList<E> {
      */
     public void setRowHeight(int height) {
         table.setRowHeight( height );
+    }
+    
+    /**
+     * Sets the width of the specified column to <code>width</code>.
+     * 
+     * @param column the column number
+     * @param width the width to set for the column
+     */
+    public void setColumnWidth(int column, int width) {
+        if (column < model.getColumnCount()) {
+            String colName = model.getColumnName( column );
+            table.getColumn( colName ).setWidth( width );
+        } else {
+            throw new IllegalArgumentException("Column " + column + " not found.");
+        }
+    }
+    
+    /**
+     * Sets whether to use an auto-created row sorter for the table.
+     * Defaults to <code>false</code>
+     * 
+     * @param autoCreateRowSorter if <code>true</code> it sets to auto-create
+     * a row sorter for the table
+     */
+    public void setAutoCreateRowSorter(boolean autoCreateRowSorter) {
+        table.setAutoCreateRowSorter( autoCreateRowSorter );
+    }
+    
+    /**
+     * Maps the index of the row in terms of the view to the underlying
+     * FTTableModel.
+     * If the contents of the model are not sorted the model and view indices
+     * are the same. 
+     * 
+     * @param viewRowIndex The index of the row in the view
+     * @return the index of the corresponding row in the model
+     */
+    public int convertRowIndexToModel(int viewRowIndex) {
+        return table.convertRowIndexToModel( viewRowIndex );
+    }
+    
+    /**
+     * Maps the index of the row in terms of the FTTableModel to the view.
+     * If the contents of the model are not sorted the model and view indices
+     * are the same.
+     * 
+     * @param modelRowIndex The index of the row in the model
+     * @return the index of the corresponding row in the view
+     */
+    public int convertRowIndexToView(int modelRowIndex) {
+        return table.convertRowIndexToView( modelRowIndex );
     }
     
     private void notifyMyListListeners(ListSelectionEvent evt) {
