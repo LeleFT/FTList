@@ -9,14 +9,15 @@ import javax.swing.event.ListSelectionListener;
 
 /**
  * An <code>FTList</code> implementation that uses a <code>JList</code> to represent
- * the objects contained in the list. To construct an <code>FTSimpleList</code> object
- * it's necessary to pass it an <code>FTSimpleListModel</code> instance in the
- * constructor.<br />
- * To render the values in the list, it uses the default renderer provided by the
- * <code>JList</code> class. It's also possible to set up a new Renderer for the
- * list.
+ * the objects contained in the list.To construct an <code>FTSimpleList</code> object
+ it's necessary to pass it an <code>FTSimpleListModel</code> instance in the
+ constructor.<br>
+ To render the values in the list, it uses the default renderer provided by the
+ <code>JList</code> class. It's also possible to set up a new Renderer for the
+ list.
  * 
  * @author Manuel Agostinetto
+ * @param <E> the type of elements managed by this list.
  */
 public class FTSimpleList<E> extends FTList<E> {
     
